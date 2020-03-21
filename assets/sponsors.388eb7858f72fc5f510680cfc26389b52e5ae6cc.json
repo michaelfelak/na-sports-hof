@@ -1,0 +1,19 @@
+{
+    "sponsors": [
+        {
+            "name": "Posey",
+            "image": "posey.jpg",
+            "url": "https://www.poseyfuneraldirectors.com"
+        },
+        {
+            "name": "Meybohm",
+            "image": "meybohm.gif",
+            "url": "https://www.meybohm.com/"
+        },
+        {
+            "name": "Parks Pharmacy",
+            "image": "parks.png",
+            "url": "https://www.parkspharmacy.com/"
+        }
+    ]
+}
