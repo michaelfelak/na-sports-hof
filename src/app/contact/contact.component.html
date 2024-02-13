@@ -1,0 +1,19 @@
+<!-- <app-nav [isContact]="true"></app-nav> -->
+<main>
+  <sky-fluid-grid>
+    <sky-row>
+      <sky-column>
+        <h1>2022 Hall of Fame Selection Committee</h1>
+        <ng-container *ngFor="let member of team">
+          <p>{{ member.name }}</p>
+        </ng-container>
+      </sky-column>
+    </sky-row>
+  </sky-fluid-grid>
+</main>
+
+<address style="text-align: center; font-size: large">
+  <p style="font-family: fantasy">North Augusta Sports Commission</p>
+  <strong>Email: </strong>
+  <a href="mailto:nasc2005@gmail.com">nasc2005@gmail.com</a>
+</address>

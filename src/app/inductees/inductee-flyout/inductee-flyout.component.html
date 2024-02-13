@@ -1,0 +1,15 @@
+<main>
+    <h1>{{context.firstname}} {{context.lastname}}</h1>
+    <h3 style="text-align: center;">Class of {{context.year}}</h3>
+    <slide-show [imagePath]="imagePath" [images]="images"></slide-show>
+    <div style="margin: 15px;">
+        <div *ngIf="p1">{{p1}}</div><br *ngIf="p1">
+        <div *ngIf="p2">{{p2}}</div><br *ngIf="p2">
+        <div *ngIf="p3">{{p3}}</div><br *ngIf="p3">
+        <div *ngIf="p4">{{p4}}</div><br *ngIf="p4">
+        <div *ngIf="p5">{{p5}}</div><br *ngIf="p5">
+        <div *ngIf="p6">{{p6}}</div><br *ngIf="p6">
+        <div *ngIf="p7">{{p7}}</div><br *ngIf="p7">
+        <div *ngIf="p8">{{p8}}</div><br *ngIf="p8">
+    </div>
+</main>

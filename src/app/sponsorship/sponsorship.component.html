@@ -1,0 +1,10 @@
+<!-- <app-nav [isSponsorship]="true"></app-nav> -->
+<h1 class="header">Our Sponsors</h1>
+<table class="center">
+    <tr>
+        <td *ngFor="let s of sponsors" style="text-align: center;">
+            <sponsor-card [name]="s.name" [image]="s.image" [url]="s.url">
+            </sponsor-card>
+        </td>
+    </tr>
+</table>
