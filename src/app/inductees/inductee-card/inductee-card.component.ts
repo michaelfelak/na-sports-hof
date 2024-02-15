@@ -10,9 +10,10 @@ import { Inductee } from '../../shared/inductee';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-let inductees = require('../inductees.json');
+import inductees from '../inductees.json';
 
 @Component({
+  standalone: true,
   selector: 'inductee-card',
   templateUrl: './inductee-card.component.html',
   styleUrls: ['./inductee-card.component.scss']

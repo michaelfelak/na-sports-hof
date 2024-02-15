@@ -1,19 +1,19 @@
-import {
-  Component, OnInit
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-let sponsors = require('./sponsors.json');
+import sponsors from './sponsors.json';
+import { SponsorCardComponent } from './sponsor/sponsor-card.component';
 
 @Component({
+  standalone: true,
+  imports: [SponsorCardComponent],
   selector: 'sponsorship-page',
   templateUrl: './sponsorship.component.html',
-  styleUrls: ['./sponsorship.component.scss']
+  styleUrls: ['./sponsorship.component.scss'],
 })
-
 export class SponsorshipComponent implements OnInit {
   public sponsors: Sponsor[] = [];
-  constructor(private titleSvc: Title) { }
+  constructor(private titleSvc: Title) {}
 
   public ngOnInit() {
     this.titleSvc.setTitle('North Augusta Sports Hall of Fame');
@@ -21,12 +21,12 @@ export class SponsorshipComponent implements OnInit {
   }
 }
 export class Sponsors {
-  public sponsors: Sponsor[];
+  public sponsors: Sponsor[] = [];
 }
 
 export class Sponsor {
-  public id: string;
-  public name: string;
-  public image: string;
-  public url: string;
+  public id: string = '';
+  public name: string = '';
+  public image: string = '';
+  public url: string = '';
 }

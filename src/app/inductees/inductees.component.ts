@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Inductee } from '../shared/inductee';
 
-let inductees = require('./inductees.json');
+import inductees from './inductees.json';
+import { InducteeCardComponent } from './inductee-card/inductee-card.component';
 
 @Component({
+  standalone: true,
+  imports: [InducteeCardComponent],
   selector: 'inductees-page',
   templateUrl: './inductees.component.html',
-  styleUrls: ['./inductees.component.scss']
+  styleUrls: ['./inductees.component.scss'],
 })
-
 export class InducteesComponent implements OnInit {
   public inductees: any;
 

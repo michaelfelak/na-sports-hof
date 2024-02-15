@@ -1,21 +1,22 @@
-import {
-  Component, Input
-} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'slide-show',
   templateUrl: './slideshow.component.html',
-  styleUrls: ['./slideshow.component.scss']
+  styleUrls: ['./slideshow.component.scss'],
 })
 export class SlideshowComponent {
-  @Input() public imagePath: string;
-  @Input() public images: string[];
+  @Input() public imagePath: string = '';
+  @Input() public images: string[] = [];
 
   public slideIndex = 2;
 
   public plusDivs(n: number) {
-    document.getElementsByClassName('initial')[0].setAttribute('style', 'display: none;');
-    this.showDivs(this.slideIndex += n);
+    document
+      .getElementsByClassName('initial')[0]
+      .setAttribute('style', 'display: none;');
+    this.showDivs((this.slideIndex += n));
   }
 
   private showDivs(n: number) {
@@ -30,6 +31,9 @@ export class SlideshowComponent {
     for (i = 0; i < x.length; i++) {
       x.item(i).setAttribute('style', 'display: none;');
     }
-    x[this.slideIndex - 1].setAttribute('style', 'display: block;margin: 0 auto;');
+    x[this.slideIndex - 1].setAttribute(
+      'style',
+      'display: block;margin: 0 auto;'
+    );
   }
 }

@@ -3,8 +3,11 @@ import { InducteeFlyoutContext } from './inductee-flyout.context';
 import { SkyAppAssetsService } from '@skyux/assets';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { SlideshowComponent } from 'src/app/shared/slideshow/slideshow.component';
 
 @Component({
+  standalone: true,
+  imports: [SlideshowComponent],
   selector: 'app-inductee-flyout',
   templateUrl: './inductee-flyout.component.html',
   styleUrls: ['./inductee-flyout.component.scss']
