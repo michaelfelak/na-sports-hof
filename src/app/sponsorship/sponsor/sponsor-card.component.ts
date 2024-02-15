@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SkyAppAssetsService } from '@skyux/assets';
 
 @Component({
   standalone: true,
@@ -13,8 +12,5 @@ export class SponsorCardComponent implements OnInit {
   @Input() public name: string = '';
   @Input() public url: string = '';
 
-  constructor(private assetSvc: SkyAppAssetsService) {}
-  public ngOnInit() {
-    this.imagePath = this.assetSvc.getUrl('sponsors/' + this.image);
-  }
+  public ngOnInit() {}
 }

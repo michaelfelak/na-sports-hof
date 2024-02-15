@@ -2,7 +2,6 @@ import {
   Component, Input, OnInit
 } from '@angular/core';
 
-import { SkyAppAssetsService } from '@skyux/assets';
 import { SkyFlyoutService, SkyFlyoutInstance, SkyFlyoutConfig } from '@skyux/flyout';
 import { InducteeFlyoutContext } from '../inductee-flyout/inductee-flyout.context';
 import { InducteeFlyoutComponent } from '../inductee-flyout/inductee-flyout.component';
@@ -11,9 +10,11 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import inductees from '../inductees.json';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
+  imports: [InducteeFlyoutComponent, CommonModule],
   selector: 'inductee-card',
   templateUrl: './inductee-card.component.html',
   styleUrls: ['./inductee-card.component.scss']
@@ -35,22 +36,23 @@ export class InducteeCardComponent implements OnInit {
   public allURLs: any;
   public bioPresent: boolean;
   // private openFlyoutStream = new Subject<boolean>();
-  constructor(private assetSvc: SkyAppAssetsService,
+  constructor(
     private flyoutService: SkyFlyoutService,
-    private http: HttpClient) { }
+    // private http: HttpClient
+    ) { }
 
   public ngOnInit() {
-    this.allURLs = this.assetSvc.getAllUrls();
+    // this.allURLs = this.assetSvc.getAllUrls();
     this.inductee = this.getInducteeById(this.id);
-    this.imagePath = this.assetSvc.getUrl('img/hof/' + this.image + '/profile.jpg');
-    this.bio = this.assetSvc.getUrl('bio/' + this.image + '.txt');
+    // this.imagePath = this.assetSvc.getUrl('img/hof/' + this.image + '/profile.jpg');
+    // this.bio = this.assetSvc.getUrl('bio/' + this.image + '.txt');
 
-    this.getBio().subscribe((result: any) => {
-      this.bioPresent = true;
-    },
-      (err: Error) => {
-        this.bioPresent = false;
-      });
+    // this.getBio().subscribe((result: any) => {
+    //   this.bioPresent = true;
+    // },
+    //   (err: Error) => {
+    //     this.bioPresent = false;
+    //   });
   }
 
   public onNameClick(id: string) {
@@ -181,7 +183,7 @@ export class InducteeCardComponent implements OnInit {
   //   return false;
   // }
 
-  private getBio(): Observable<any> {
-    return this.http.get<any>(this.assetSvc.getUrl('bio/' + this.image + '.json'));
-  }
+  // private getBio(): Observable<any> {
+    // return this.http.get<any>(this.assetSvc.getUrl('bio/' + this.image + '.json'));
+  // }
 }

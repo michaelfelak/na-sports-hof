@@ -1,7 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   standalone: true,
+  imports: [CommonModule],
   selector: 'slide-show',
   templateUrl: './slideshow.component.html',
   styleUrls: ['./slideshow.component.scss'],

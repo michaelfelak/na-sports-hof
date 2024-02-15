@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { InducteeFlyoutContext } from './inductee-flyout.context';
-import { SkyAppAssetsService } from '@skyux/assets';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SlideshowComponent } from 'src/app/shared/slideshow/slideshow.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [SlideshowComponent],
+  imports: [SlideshowComponent, CommonModule],
   selector: 'app-inductee-flyout',
   templateUrl: './inductee-flyout.component.html',
   styleUrls: ['./inductee-flyout.component.scss']
@@ -27,21 +27,19 @@ export class InducteeFlyoutComponent implements OnInit {
 
   constructor(
     public context: InducteeFlyoutContext,
-    private assetSvc: SkyAppAssetsService,
     private http: HttpClient
   ) { }
 
   public ngOnInit() {
-    this.imagePath = this.assetSvc.getUrl(
-      'img/hof/' + this.context.image + '/profile.jpg'
-    );
+    // this.imagePath = this.assetSvc.getUrl(
+    //   'img/hof/' + this.context.image + '/profile.jpg'
+    // );
 
-    for (let record of this.context.images) {
-      if (!record.includes('profile.jpg')) {
-        this.images.push(this.assetSvc.getUrl(record));
-      }
-    }
-    console.log(this.images);
+    // for (let record of this.context.images) {
+    //   if (!record.includes('profile.jpg')) {
+    //     this.images.push(this.assetSvc.getUrl(record));
+    //   }
+    // }
     this.getBio().subscribe((result: any) => {
       this.p1 = result.p1;
       this.p2 = result.p2;
@@ -59,6 +57,6 @@ export class InducteeFlyoutComponent implements OnInit {
   }
 
   public getBio(): Observable<any> {
-    return this.http.get<any>(this.assetSvc.getUrl('bio/' + this.context.image + '.json'));
+    return this.http.get<any>('../../assets/bio/' + this.context.image + '.json');
   }
 }

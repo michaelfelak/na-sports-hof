@@ -3,10 +3,11 @@ import { Inductee } from '../shared/inductee';
 
 import inductees from './inductees.json';
 import { InducteeCardComponent } from './inductee-card/inductee-card.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [InducteeCardComponent],
+  imports: [InducteeCardComponent, CommonModule],
   selector: 'inductees-page',
   templateUrl: './inductees.component.html',
   styleUrls: ['./inductees.component.scss'],

@@ -3,10 +3,11 @@ import { Title } from '@angular/platform-browser';
 
 import sponsors from './sponsors.json';
 import { SponsorCardComponent } from './sponsor/sponsor-card.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [SponsorCardComponent],
+  imports: [SponsorCardComponent, CommonModule],
   selector: 'sponsorship-page',
   templateUrl: './sponsorship.component.html',
   styleUrls: ['./sponsorship.component.scss'],

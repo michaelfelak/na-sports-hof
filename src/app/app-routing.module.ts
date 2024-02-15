@@ -13,31 +13,30 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
-  {
-    path: 'inductees',
-    component: InducteesComponent,
-  },
-  {
-    path: 'bolton',
-    component: BoltonComponent,
-  },
-  {
-    path: 'brissie',
-    component: BrissieComponent,
-  },
-  {
-    path: 'guidelines',
-    component: GuidelinesComponent,
-  },
-  {
-    path: 'sponsorship',
-    component: SponsorshipComponent,
-  },
-  {
-    path: 'contact',
-    component: ContactComponent,
-  },
-  
+  // {
+  //   path: 'inductees',
+  //   component: InducteesComponent,
+  // },
+  // {
+  //   path: 'bolton',
+  //   component: BoltonComponent,
+  // },
+  // {
+  //   path: 'brissie',
+  //   component: BrissieComponent,
+  // },
+  // {
+  //   path: 'guidelines',
+  //   component: GuidelinesComponent,
+  // },
+  // {
+  //   path: 'sponsorship',
+  //   component: SponsorshipComponent,
+  // },
+  // {
+  //   path: 'contact',
+  //   component: ContactComponent,
+  // },  
 ];
 
 @NgModule({
